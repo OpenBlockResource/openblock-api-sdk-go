@@ -17,22 +17,29 @@ https://docs.openblock.com/OpenBlock/API/Enterprise%20Wallet/#overview
 
 * Get your balance
 ```golang
+package main
+
 import (
-    "time"
+    "fmt"
     apisdk "github.com/OpenBlockResource/openblock-api-sdk-go"
+    "time"
 )
 
-# Refer to https://docs.openblock.com/OpenBlock/API/Enterprise%20Wallet/#overview to get your api key and secret
-client = apisdk.NewClient(
-    "YOUR API KEY",
-    "YOUR SECRET",
-    10 * time.Second,
-)
+func main() {
+    client := apisdk.NewClient(
+        "API KEY",
+        "API Secret",
+        10*time.Second,
+    )
 
-resp := client.GetBalance(
-    "Polygon",
-    "USD",
-    1, 20
-)
-fmt.Printf("%+v\n", resp)
+    resp, err := client.CompanyWallet.GetBalance(&apisdk.ParamGetBalance{
+        ChainName: "Polygon",
+        Currency:  "USD",
+        Page:      0,
+        Limit:     20,
+    })
+
+    fmt.Printf("%+v\n", resp)
+    fmt.Printf("err: %+v\n", err)
+}
 ```
