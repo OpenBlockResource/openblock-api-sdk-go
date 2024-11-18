@@ -106,7 +106,15 @@ type RespTxHistory struct {
 		OperateType                   string `json:"operate_type"`
 		TransferId                    string `json:"transfer_id"`
 		ApproveLogicData              string `json:"approve_logic_data"`
-		CompanyWalletApproveLogicData string `json:"company_wallet_approve_logic_data"`
+		CompanyWalletApproveLogicData struct {
+			RecordId          string `json:"record_id"`
+			ActionType        string `json:"action_type"`
+			Status            string `json:"status"`
+			AgreeCount        int    `json:"agree_count"`
+			TotalCount        int    `json:"total_count"`
+			ApproveTransferID string `json:"approve_transfer_id"`
+		} `json:"company_wallet_approve_logic_data"`
+		Memo string `json:"memo"`
 	} `json:"data"`
 }
 
