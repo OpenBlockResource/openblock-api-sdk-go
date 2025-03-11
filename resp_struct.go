@@ -23,6 +23,7 @@ type RespApprovals struct {
 		OriginUserUuid    string `json:"origin_user_uuid"`
 		OriginUserAccount string `json:"origin_user_account"`
 		CreateTime        string `json:"create_time"`
+		Note              string `json:"note"`
 		ExtraData         struct {
 			Txinfo struct {
 				Eip1559              bool   `json:"eip1559"`

@@ -77,6 +77,7 @@ type ParamNewApproval struct {
 	Action     string `json:"action"`
 	HDWalletID string `json:"hd_wallet_id"`
 	TXInfo     TXInfo `json:"txinfo"`
+	Note       string `json:"note"`
 }
 
 type ParamAgreeApproval struct {
