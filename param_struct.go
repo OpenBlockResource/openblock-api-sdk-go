@@ -71,6 +71,7 @@ type TXInfo struct {
 	DappInfo             *DappInfo `json:"dappInfo,omitempty"`
 	Utxo                 []*Utxo   `json:"utxo,omitempty"`
 	UseMaxAmount         bool      `json:"useMaxAmount,omitempty"`
+	TotalGas             string    `json:"totalGas,omitempty"`
 }
 
 type ParamNewApproval struct {
