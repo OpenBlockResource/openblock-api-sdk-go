@@ -44,6 +44,13 @@ type DappInfo struct {
 	DappName string `json:"dappName"`
 }
 
+type Utxo struct {
+	Script string `json:"script"`
+	Amount string `json:"amount"`
+	Hash   string `json:"hash"`
+	Index  string `json:"index"`
+}
+
 type TXInfo struct {
 	To                   string    `json:"to,omitempty"`
 	From                 string    `json:"from,omitempty"`
@@ -62,12 +69,16 @@ type TXInfo struct {
 	PretreatmentValue    string    `json:"pretreatment_value,omitempty"`
 	TokenID              string    `json:"token_id,omitempty"`
 	DappInfo             *DappInfo `json:"dappInfo,omitempty"`
+	Utxo                 []*Utxo   `json:"utxo,omitempty"`
+	UseMaxAmount         bool      `json:"useMaxAmount,omitempty"`
+	TotalGas             string    `json:"totalGas,omitempty"`
 }
 
 type ParamNewApproval struct {
 	Action     string `json:"action"`
 	HDWalletID string `json:"hd_wallet_id"`
 	TXInfo     TXInfo `json:"txinfo"`
+	Note       string `json:"note"`
 }
 
 type ParamAgreeApproval struct {
