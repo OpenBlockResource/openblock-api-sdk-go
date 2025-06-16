@@ -52,31 +52,32 @@ type Utxo struct {
 }
 
 type TXInfo struct {
-	To                   string     `json:"to,omitempty"`
-	From                 string     `json:"from,omitempty"`
-	TokenAddress         string     `json:"tokenAddress,omitempty"`
-	Value                string     `json:"value,omitempty"`
-	Nonce                string     `json:"nonce,omitempty"`
-	GasLimit             string     `json:"gasLimit,omitempty"`
-	GasPrice             string     `json:"gasPrice,omitempty"`
-	MaxFeePerGas         string     `json:"maxFeePerGas,omitempty"`
-	MaxPriorityFeePerGas string     `json:"maxPriorityFeePerGas,omitempty"`
-	Chain                string     `json:"chain,omitempty"`
-	TransactionType      string     `json:"transaction_type,omitempty"`
-	OriginalRecordId     string     `json:"original_record_id,omitempty"`
-	OperateType          string     `json:"operate_type,omitempty"`
-	Data                 string     `json:"data,omitempty"`
-	PretreatmentValue    string     `json:"pretreatment_value,omitempty"`
-	TokenID              string     `json:"token_id,omitempty"`
-	DappInfo             *DappInfo  `json:"dappInfo,omitempty"`
-	Utxo                 []*Utxo    `json:"utxo,omitempty"`
-	UseMaxAmount         bool       `json:"useMaxAmount,omitempty"`
-	TotalGas             string     `json:"totalGas,omitempty"`
-	RecentBlockHash      string     `json:"recent_blockhash"`
-	ActiveTokenEnum      int        `json:"activeTokenEnum"`
-	TvmParams            *TVMParams `json:"tvmParams,omitempty"`
-	Token                *TokenData `json:"token,omitempty"`
-	FeeLimit             string     `json:"feeLimit"`
+	To                   string            `json:"to,omitempty"`
+	From                 string            `json:"from,omitempty"`
+	TokenAddress         string            `json:"tokenAddress,omitempty"`
+	Value                string            `json:"value,omitempty"`
+	Nonce                string            `json:"nonce,omitempty"`
+	GasLimit             string            `json:"gasLimit,omitempty"`
+	GasPrice             string            `json:"gasPrice,omitempty"`
+	MaxFeePerGas         string            `json:"maxFeePerGas,omitempty"`
+	MaxPriorityFeePerGas string            `json:"maxPriorityFeePerGas,omitempty"`
+	Chain                string            `json:"chain,omitempty"`
+	TransactionType      string            `json:"transaction_type,omitempty"`
+	OriginalRecordId     string            `json:"original_record_id,omitempty"`
+	OperateType          string            `json:"operate_type,omitempty"`
+	Data                 string            `json:"data,omitempty"`
+	PretreatmentValue    string            `json:"pretreatment_value,omitempty"`
+	TokenID              string            `json:"token_id,omitempty"`
+	DappInfo             *DappInfo         `json:"dappInfo,omitempty"`
+	Utxo                 []*Utxo           `json:"utxo,omitempty"`
+	UseMaxAmount         bool              `json:"useMaxAmount,omitempty"`
+	TotalGas             string            `json:"totalGas,omitempty"`
+	RecentBlockHash      string            `json:"recent_blockhash"`
+	ActiveTokenEnum      int               `json:"activeTokenEnum"`
+	TvmParams            *TVMParams        `json:"tvmParams,omitempty"`
+	Token                *TokenData        `json:"token,omitempty"`
+	FeeLimit             string            `json:"feeLimit"`
+	GasInfo              map[string]string `json:"gasInfo"`
 }
 
 type TVMParams struct {
