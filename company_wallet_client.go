@@ -26,7 +26,7 @@ type CompanyWalletClient struct {
 
 func NewCompanyWalletClient(APIKey, APISecret string, timeout time.Duration) *CompanyWalletClient {
 	return &CompanyWalletClient{
-		Host:      "hkdev4back.openblock.vip",
+		Host:      "auth.openblock.com",
 		APIKey:    APIKey,
 		APISecret: APISecret,
 		httpClient: &http.Client{
