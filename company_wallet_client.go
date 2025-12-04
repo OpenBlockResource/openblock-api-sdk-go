@@ -154,15 +154,15 @@ func (c *CompanyWalletClient) NewApproval(params *ParamNewApproval) (*RespNewApp
 	if params.HDWalletID != "" {
 		inparams["hd_wallet_id"] = params.HDWalletID
 	}
-	if params.TXInfo.TransactionType == "" {
-		return nil, fmt.Errorf("TXInfo.TransactionType is required")
-	}
 	if params.TXInfo.Chain == "" {
 		return nil, fmt.Errorf("TXInfo.Chain is required")
 	}
-	if params.TXInfo.From == "" {
-		return nil, fmt.Errorf("TXInfo.From is required")
-	}
+	// if params.TXInfo.TransactionType == "" {
+	// 	return nil, fmt.Errorf("TXInfo.TransactionType is required")
+	// }
+	// if params.TXInfo.From == "" {
+	// 	return nil, fmt.Errorf("TXInfo.From is required")
+	// }
 	txinfoString, err := json.Marshal(params.TXInfo)
 	if err != nil {
 		return nil, err

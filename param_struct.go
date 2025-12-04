@@ -42,6 +42,7 @@ type DappInfo struct {
 	PortName string `json:"portName"`
 	Icon     string `json:"icon"`
 	DappName string `json:"dappName"`
+	Provider string `json:"provider,omitempty"`
 }
 
 type Utxo struct {
@@ -78,6 +79,17 @@ type TXInfo struct {
 	Token                *TokenData        `json:"token,omitempty"`
 	FeeLimit             string            `json:"feeLimit"`
 	GasInfo              map[string]string `json:"gasInfo"`
+	Type                 string            `json:"type,omitempty"`
+	Method               string            `json:"method,omitempty"`
+	Msg                  *Msg              `json:"msg,omitempty"`
+	OriginAddress        string            `json:"origin_address,omitempty"`
+	TxPayload            interface{}       `json:"txPayload,omitempty"`
+}
+
+type Msg struct {
+	SignMsg     string `json:"signMsg"`
+	Message     string `json:"message"`
+	OriginalMsg string `json:"originalMsg"`
 }
 
 type TVMParams struct {
