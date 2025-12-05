@@ -24,6 +24,7 @@ type RespApprovals struct {
 		OriginUserAccount string `json:"origin_user_account"`
 		CreateTime        string `json:"create_time"`
 		Note              string `json:"note"`
+		TxHash            string `json:"tx_hash"`
 		ExtraData         struct {
 			Txinfo struct {
 				Eip1559              bool   `json:"eip1559"`
@@ -65,8 +66,10 @@ type RespApprovals struct {
 				} `json:"txinput"`
 				GetPriceKey string `json:"getPriceKey"`
 				TxPayload   string `json:"txPayload"`
+				Msg         *Msg   `json:"msg"`
 			} `json:"txinfo"`
 		} `json:"extra_data"`
+		Authorization *Authorization `json:"authorization"`
 	} `json:"data"`
 }
 
@@ -205,4 +208,9 @@ type RespGetCompanyWalletHDWalletAddress struct {
 			Address string `json:"address"`
 		} `json:"address_list"`
 	}
+}
+
+type Authorization struct {
+	FinalHash string `json:"final_hash"`
+	SessionID string `json:"session_id"`
 }
