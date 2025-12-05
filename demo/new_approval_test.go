@@ -56,7 +56,7 @@ func TestNewBtcApproval(t *testing.T) {
 
 func TestNewSolTransactionSignatureApproval(t *testing.T) {
 	client := apisdk.NewClient("361bdf3a1e0640979a3e2240c3361609", "U3IXmFgR848q5XA1vQVgdvW1Z69UvQXD", 10*time.Second)
-	// client.CompanyWallet.Host = "hkdev8back.openblock.vip"
+
 	resp, err := client.CompanyWallet.NewApproval(&apisdk.ParamNewApproval{
 		Action: "TRANSACTION_SIGNATURE",
 		TXInfo: apisdk.TXInfo{

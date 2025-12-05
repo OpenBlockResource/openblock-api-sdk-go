@@ -64,6 +64,7 @@ type RespApprovals struct {
 					ToAddress string `json:"toAddress"`
 				} `json:"txinput"`
 				GetPriceKey string `json:"getPriceKey"`
+				TxPayload   string `json:"txPayload"`
 			} `json:"txinfo"`
 		} `json:"extra_data"`
 	} `json:"data"`
