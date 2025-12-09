@@ -65,6 +65,9 @@ func (c *CompanyWalletClient) GetApprovalsV2(params *ParamGetApprovalsV2) (*Resp
 	if params.ListType != "" {
 		inparams["list_type"] = params.ListType
 	}
+	if params.RecordID != "" {
+		inparams["record_id"] = params.RecordID
+	}
 
 	var ret = &RespApprovalsV2{}
 	err := c.invokeAPI(http.MethodGet, "/openapi/company_wallet/approvalsv2/", inparams, ret)

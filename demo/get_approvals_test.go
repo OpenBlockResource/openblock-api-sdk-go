@@ -25,6 +25,7 @@ func TestGetApprovalsV2(t *testing.T) {
 		Page:     1,
 		Limit:    20,
 		ListType: "sponsor",
+		RecordID: "586d043897734256b3fa402b08d464bd",
 	})
-	fmt.Println(resp, err)
+	fmt.Printf("resp: %+v,err: %v", resp, err)
 }
