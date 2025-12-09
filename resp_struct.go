@@ -253,6 +253,7 @@ type RespApprovalsV2 struct {
 			ExpiredTime       *time.Time     `json:"expired_time"`
 			HdWalletID        string         `json:"hd_wallet_id"`
 			Authorization     *Authorization `json:"authorization"`
+			TxHash            string         `json:"tx_hash"`
 		} `json:"data"`
 	} `json:"data"`
 }
