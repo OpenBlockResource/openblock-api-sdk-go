@@ -121,4 +121,5 @@ type ParamGetApprovalsV2 struct {
 	Page     int    `json:"page"`
 	Limit    int    `json:"limit"`
 	ListType string `json:"list_type"`
+	RecordID string `json:"record_id"`
 }
