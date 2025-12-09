@@ -70,8 +70,8 @@ type RespApprovals struct {
 				TxPayload   string `json:"txPayload"`
 				Msg         *Msg   `json:"msg"`
 			} `json:"txinfo"`
+			Authorization *Authorization `json:"authorization"`
 		} `json:"extra_data"`
-		Authorization *Authorization `json:"authorization"`
 	} `json:"data"`
 }
 
@@ -239,21 +239,20 @@ type RespApprovalsV2 struct {
 		SponsorCount int `json:"sponsor_count"`
 		FinishCount  int `json:"finish_count"`
 		Data         []struct {
-			Cursor            int            `json:"cursor"`
-			RecordID          string         `json:"record_id"`
-			Status            string         `json:"status"`
-			CompanyWalletID   string         `json:"company_wallet_id"`
-			WalletName        string         `json:"wallet_name"`
-			ApproveType       string         `json:"approve_type"`
-			ActionType        string         `json:"action_type"`
-			OriginUserUUID    string         `json:"origin_user_uuid"`
-			OriginUserAccount string         `json:"origin_user_account"`
-			CreateTime        string         `json:"create_time"`
-			ExtraData         ExtraData      `json:"extra_data,omitempty"`
-			ExpiredTime       *time.Time     `json:"expired_time"`
-			HdWalletID        string         `json:"hd_wallet_id"`
-			Authorization     *Authorization `json:"authorization"`
-			TxHash            string         `json:"tx_hash"`
+			Cursor            int        `json:"cursor"`
+			RecordID          string     `json:"record_id"`
+			Status            string     `json:"status"`
+			CompanyWalletID   string     `json:"company_wallet_id"`
+			WalletName        string     `json:"wallet_name"`
+			ApproveType       string     `json:"approve_type"`
+			ActionType        string     `json:"action_type"`
+			OriginUserUUID    string     `json:"origin_user_uuid"`
+			OriginUserAccount string     `json:"origin_user_account"`
+			CreateTime        string     `json:"create_time"`
+			ExtraData         ExtraData  `json:"extra_data,omitempty"`
+			ExpiredTime       *time.Time `json:"expired_time"`
+			HdWalletID        string     `json:"hd_wallet_id"`
+			TxHash            string     `json:"tx_hash"`
 		} `json:"data"`
 	} `json:"data"`
 }
@@ -301,4 +300,5 @@ type ExtraData struct {
 		TxPayload   string `json:"txPayload"`
 		Msg         *Msg   `json:"msg"`
 	} `json:"txinfo"`
+	Authorization *Authorization `json:"authorization"`
 }
