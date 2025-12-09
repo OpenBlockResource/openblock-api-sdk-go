@@ -17,3 +17,13 @@ func TestGetApprovals(t *testing.T) {
 	})
 	fmt.Println(resp, err)
 }
+
+func TestGetApprovalsV2(t *testing.T) {
+	client := apisdk.NewClient("APIKey", "APISecret", 10*time.Second)
+	resp, err := client.CompanyWallet.GetApprovalsV2(&apisdk.ParamGetApprovalsV2{
+		Page:     1,
+		Limit:    20,
+		ListType: "sponsor",
+	})
+	fmt.Println(resp, err)
+}

@@ -116,3 +116,9 @@ type ParamAgreeApproval struct {
 type ParamGetCompanyWalletHDWalletAddress struct {
 	HDWalletID string `json:"hd_wallet_id"`
 }
+
+type ParamGetApprovalsV2 struct {
+	Page     int    `json:"page"`
+	Limit    int    `json:"limit"`
+	ListType string `json:"list_type"`
+}

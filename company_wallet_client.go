@@ -53,6 +53,24 @@ func (c *CompanyWalletClient) GetApprovals(params *ParamGetApprovals) (*RespAppr
 	return ret, err
 }
 
+// GetApprovalsV2 gets the lists of approvalsv2
+func (c *CompanyWalletClient) GetApprovalsV2(params *ParamGetApprovalsV2) (*RespApprovalsV2, error) {
+	var inparams = map[string]any{}
+	if params.Page != 0 {
+		inparams["page"] = params.Page
+	}
+	if params.Limit != 0 {
+		inparams["limit"] = params.Limit
+	}
+	if params.ListType != "" {
+		inparams["list_type"] = params.ListType
+	}
+
+	var ret = &RespApprovalsV2{}
+	err := c.invokeAPI(http.MethodGet, "/openapi/company_wallet/approvalsv2/", inparams, ret)
+	return ret, err
+}
+
 func (c *CompanyWalletClient) GetBalance(params *ParamGetBalance) (*RespBalance, error) {
 	var inparams = map[string]any{}
 	if params.ChainName == "" {
