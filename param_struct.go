@@ -84,6 +84,8 @@ type TXInfo struct {
 	Msg                  *Msg              `json:"msg,omitempty"`
 	OriginAddress        string            `json:"origin_address,omitempty"`
 	TxPayload            interface{}       `json:"txPayload,omitempty"`
+	IsNative             bool              `json:"isNative,omitempty"`
+	Eip1559              bool              `json:"eip1559,omitempty"`
 }
 
 type Msg struct {
