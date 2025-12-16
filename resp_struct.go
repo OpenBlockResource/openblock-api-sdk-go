@@ -52,23 +52,10 @@ type RespApprovals struct {
 				Symbol               string `json:"symbol"`
 				TotalGas             string `json:"totalGas"`
 				NativeCurrency       string `json:"nativeCurrency"`
-				TXInput              struct {
-					ChainID               string `json:"chainId"`
-					TXMode                int    `json:"txMode"`
-					MaxInclusionFeePerGas string `json:"maxInclusionFeePerGas"`
-					MaxFeePerGas          string `json:"maxFeePerGas"`
-					GasLimit              string `json:"gasLimit"`
-					Nonce                 string `json:"nonce"`
-					Transaction           struct {
-						Transfer struct {
-							Amount string `json:"amount"`
-						} `json:"transfer"`
-					} `json:"transaction"`
-					ToAddress string `json:"toAddress"`
-				} `json:"txinput"`
-				GetPriceKey string `json:"getPriceKey"`
-				TxPayload   string `json:"txPayload"`
-				Msg         *Msg   `json:"msg"`
+				TXInput              any    `json:"txinput"`
+				GetPriceKey          string `json:"getPriceKey"`
+				TxPayload            string `json:"txPayload"`
+				Msg                  *Msg   `json:"msg"`
 			} `json:"txinfo"`
 			Authorization *Authorization `json:"authorization"`
 		} `json:"extra_data"`
@@ -259,20 +246,20 @@ type RespApprovalsV2 struct {
 
 type ExtraData struct {
 	Txinfo struct {
-		Eip1559              bool        `json:"eip1559"`
-		To                   string      `json:"to"`
-		TokenAddress         string      `json:"tokenAddress"`
-		From                 string      `json:"from"`
-		Value                interface{} `json:"value"`
-		Nonce                string      `json:"nonce"`
-		GasLimit             string      `json:"gasLimit"`
-		GasPrice             string      `json:"gasPrice"`
-		MaxFeePerGas         string      `json:"maxFeePerGas"`
-		MaxPriorityFeePerGas string      `json:"maxPriorityFeePerGas"`
-		Unit                 string      `json:"unit"`
-		ShortHost            string      `json:"shortHost"`
-		Chain                string      `json:"chain"`
-		IsNative             bool        `json:"isNative"`
+		Eip1559              bool   `json:"eip1559"`
+		To                   string `json:"to"`
+		TokenAddress         string `json:"tokenAddress"`
+		From                 string `json:"from"`
+		Value                string `json:"value"`
+		Nonce                string `json:"nonce"`
+		GasLimit             string `json:"gasLimit"`
+		GasPrice             string `json:"gasPrice"`
+		MaxFeePerGas         string `json:"maxFeePerGas"`
+		MaxPriorityFeePerGas string `json:"maxPriorityFeePerGas"`
+		Unit                 string `json:"unit"`
+		ShortHost            string `json:"shortHost"`
+		Chain                string `json:"chain"`
+		IsNative             bool   `json:"isNative"`
 		Token                any
 		Data                 string `json:"data"`
 		GoogleRecordID       string `json:"google_record_id"`
@@ -282,23 +269,10 @@ type ExtraData struct {
 		Symbol               string `json:"symbol"`
 		TotalGas             string `json:"totalGas"`
 		NativeCurrency       string `json:"nativeCurrency"`
-		TXInput              struct {
-			ChainID               string `json:"chainId"`
-			TXMode                int    `json:"txMode"`
-			MaxInclusionFeePerGas string `json:"maxInclusionFeePerGas"`
-			MaxFeePerGas          string `json:"maxFeePerGas"`
-			GasLimit              string `json:"gasLimit"`
-			Nonce                 string `json:"nonce"`
-			Transaction           struct {
-				Transfer struct {
-					Amount string `json:"amount"`
-				} `json:"transfer"`
-			} `json:"transaction"`
-			ToAddress string `json:"toAddress"`
-		} `json:"txinput"`
-		GetPriceKey string `json:"getPriceKey"`
-		TxPayload   string `json:"txPayload"`
-		Msg         *Msg   `json:"msg"`
+		TXInput              any    `json:"txinput"`
+		GetPriceKey          string `json:"getPriceKey"`
+		TxPayload            string `json:"txPayload"`
+		Msg                  *Msg   `json:"msg"`
 	} `json:"txinfo"`
 	Authorization *Authorization `json:"authorization"`
 }
