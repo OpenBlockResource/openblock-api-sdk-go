@@ -56,6 +56,7 @@ type RespApprovals struct {
 				GetPriceKey          string `json:"getPriceKey"`
 				TxPayload            string `json:"txPayload"`
 				Msg                  *Msg   `json:"msg"`
+				Method               string `json:"method"`
 			} `json:"txinfo"`
 			Authorization *Authorization `json:"authorization"`
 		} `json:"extra_data"`
@@ -273,6 +274,7 @@ type ExtraData struct {
 		GetPriceKey          string `json:"getPriceKey"`
 		TxPayload            string `json:"txPayload"`
 		Msg                  *Msg   `json:"msg"`
+		Method               string `json:"method"`
 	} `json:"txinfo"`
 	Authorization *Authorization `json:"authorization"`
 }
