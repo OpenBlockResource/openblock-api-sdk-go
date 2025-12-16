@@ -54,7 +54,7 @@ type RespApprovals struct {
 				NativeCurrency       string `json:"nativeCurrency"`
 				TXInput              any    `json:"txinput"`
 				GetPriceKey          string `json:"getPriceKey"`
-				TxPayload            string `json:"txPayload"`
+				TxPayload            any    `json:"txPayload"`
 				Msg                  *Msg   `json:"msg"`
 				Method               string `json:"method"`
 			} `json:"txinfo"`
@@ -272,7 +272,7 @@ type ExtraData struct {
 		NativeCurrency       string `json:"nativeCurrency"`
 		TXInput              any    `json:"txinput"`
 		GetPriceKey          string `json:"getPriceKey"`
-		TxPayload            string `json:"txPayload"`
+		TxPayload            any    `json:"txPayload"`
 		Msg                  *Msg   `json:"msg"`
 		Method               string `json:"method"`
 	} `json:"txinfo"`
