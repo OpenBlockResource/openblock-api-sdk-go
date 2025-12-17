@@ -86,6 +86,7 @@ type TXInfo struct {
 	TxPayload            interface{}       `json:"txPayload,omitempty"`
 	IsNative             bool              `json:"isNative,omitempty"`
 	Eip1559              bool              `json:"eip1559,omitempty"`
+	Payload              any               `json:"payload,omitempty"`
 }
 
 type Msg struct {
