@@ -60,6 +60,7 @@ type RespApprovals struct {
 				Payload              any    `json:"payload"`
 			} `json:"txinfo"`
 			Authorization *Authorization `json:"authorization"`
+			CustomData    string         `json:"custom_data"`
 		} `json:"extra_data"`
 	} `json:"data"`
 }
@@ -279,4 +280,5 @@ type ExtraData struct {
 		Payload              any    `json:"payload"`
 	} `json:"txinfo"`
 	Authorization *Authorization `json:"authorization"`
+	CustomData    string         `json:"custom_data"`
 }
