@@ -175,6 +175,9 @@ func (c *CompanyWalletClient) NewApproval(params *ParamNewApproval) (*RespNewApp
 	if params.HDWalletID != "" {
 		inparams["hd_wallet_id"] = params.HDWalletID
 	}
+	if params.ExpiredTimeout != 0 {
+		inparams["expired_timeout"] = params.ExpiredTimeout
+	}
 	if params.TXInfo.Chain == "" {
 		return nil, fmt.Errorf("TXInfo.Chain is required")
 	}
