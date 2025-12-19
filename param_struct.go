@@ -106,10 +106,11 @@ type TVMParams struct {
 }
 
 type ParamNewApproval struct {
-	Action     string `json:"action"`
-	HDWalletID string `json:"hd_wallet_id"`
-	TXInfo     TXInfo `json:"txinfo"`
-	Note       string `json:"note"`
+	Action         string `json:"action"`
+	HDWalletID     string `json:"hd_wallet_id"`
+	TXInfo         TXInfo `json:"txinfo"`
+	Note           string `json:"note"`
+	ExpiredTimeout int32  `json:"expired_timeout,omitempty"`
 }
 
 type ParamAgreeApproval struct {
