@@ -87,6 +87,7 @@ type TXInfo struct {
 	IsNative             bool              `json:"isNative,omitempty"`
 	Eip1559              bool              `json:"eip1559,omitempty"`
 	Payload              any               `json:"payload,omitempty"`
+	BridgeMethod         string            `json:"bridgeMethod,omitempty"`
 }
 
 type Msg struct {
