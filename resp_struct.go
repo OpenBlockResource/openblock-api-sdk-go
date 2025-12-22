@@ -56,6 +56,7 @@ type RespApprovals struct {
 				Msg                  *Msg   `json:"msg"`
 				Method               string `json:"method"`
 				Payload              any    `json:"payload"`
+				BridgeMethod         string `json:"bridgeMethod"`
 			} `json:"txinfo"`
 			Authorization *Authorization `json:"authorization"`
 			CustomData    string         `json:"custom_data"`
@@ -276,6 +277,7 @@ type ExtraData struct {
 		Msg                  *Msg   `json:"msg"`
 		Method               string `json:"method"`
 		Payload              any    `json:"payload"`
+		BridgeMethod         string `json:"bridgeMethod"`
 	} `json:"txinfo"`
 	Authorization *Authorization `json:"authorization"`
 	CustomData    string         `json:"custom_data"`
