@@ -53,6 +53,27 @@ func (c *CompanyWalletClient) GetApprovals(params *ParamGetApprovals) (*RespAppr
 	return ret, err
 }
 
+// GetApprovalsV2 gets the lists of approvalsv2
+func (c *CompanyWalletClient) GetApprovalsV2(params *ParamGetApprovalsV2) (*RespApprovalsV2, error) {
+	var inparams = map[string]any{}
+	if params.Page != 0 {
+		inparams["page"] = params.Page
+	}
+	if params.Limit != 0 {
+		inparams["limit"] = params.Limit
+	}
+	if params.ListType != "" {
+		inparams["list_type"] = params.ListType
+	}
+	if params.RecordID != "" {
+		inparams["record_id"] = params.RecordID
+	}
+
+	var ret = &RespApprovalsV2{}
+	err := c.invokeAPI(http.MethodGet, "/openapi/company_wallet/approvalsv2/", inparams, ret)
+	return ret, err
+}
+
 func (c *CompanyWalletClient) GetBalance(params *ParamGetBalance) (*RespBalance, error) {
 	var inparams = map[string]any{}
 	if params.ChainName == "" {
@@ -154,15 +175,18 @@ func (c *CompanyWalletClient) NewApproval(params *ParamNewApproval) (*RespNewApp
 	if params.HDWalletID != "" {
 		inparams["hd_wallet_id"] = params.HDWalletID
 	}
-	if params.TXInfo.TransactionType == "" {
-		return nil, fmt.Errorf("TXInfo.TransactionType is required")
+	if params.ExpiredTimeout != 0 {
+		inparams["expired_timeout"] = params.ExpiredTimeout
 	}
 	if params.TXInfo.Chain == "" {
 		return nil, fmt.Errorf("TXInfo.Chain is required")
 	}
-	if params.TXInfo.From == "" {
-		return nil, fmt.Errorf("TXInfo.From is required")
-	}
+	// if params.TXInfo.TransactionType == "" {
+	// 	return nil, fmt.Errorf("TXInfo.TransactionType is required")
+	// }
+	// if params.TXInfo.From == "" {
+	// 	return nil, fmt.Errorf("TXInfo.From is required")
+	// }
 	txinfoString, err := json.Marshal(params.TXInfo)
 	if err != nil {
 		return nil, err

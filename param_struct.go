@@ -42,6 +42,7 @@ type DappInfo struct {
 	PortName string `json:"portName"`
 	Icon     string `json:"icon"`
 	DappName string `json:"dappName"`
+	Provider string `json:"provider,omitempty"`
 }
 
 type Utxo struct {
@@ -78,6 +79,21 @@ type TXInfo struct {
 	Token                *TokenData        `json:"token,omitempty"`
 	FeeLimit             string            `json:"feeLimit"`
 	GasInfo              map[string]string `json:"gasInfo"`
+	Type                 string            `json:"type,omitempty"`
+	Method               string            `json:"method,omitempty"`
+	Msg                  *Msg              `json:"msg,omitempty"`
+	OriginAddress        string            `json:"origin_address,omitempty"`
+	TxPayload            interface{}       `json:"txPayload,omitempty"`
+	IsNative             bool              `json:"isNative,omitempty"`
+	Eip1559              bool              `json:"eip1559,omitempty"`
+	Payload              any               `json:"payload,omitempty"`
+	BridgeMethod         string            `json:"bridgeMethod,omitempty"`
+}
+
+type Msg struct {
+	SignMsg     string `json:"signMsg"`
+	Message     string `json:"message"`
+	OriginalMsg string `json:"originalMsg"`
 }
 
 type TVMParams struct {
@@ -90,10 +106,11 @@ type TVMParams struct {
 }
 
 type ParamNewApproval struct {
-	Action     string `json:"action"`
-	HDWalletID string `json:"hd_wallet_id"`
-	TXInfo     TXInfo `json:"txinfo"`
-	Note       string `json:"note"`
+	Action         string `json:"action"`
+	HDWalletID     string `json:"hd_wallet_id"`
+	TXInfo         TXInfo `json:"txinfo"`
+	Note           string `json:"note"`
+	ExpiredTimeout int32  `json:"expired_timeout,omitempty"`
 }
 
 type ParamAgreeApproval struct {
@@ -103,4 +120,11 @@ type ParamAgreeApproval struct {
 
 type ParamGetCompanyWalletHDWalletAddress struct {
 	HDWalletID string `json:"hd_wallet_id"`
+}
+
+type ParamGetApprovalsV2 struct {
+	Page     int    `json:"page"`
+	Limit    int    `json:"limit"`
+	ListType string `json:"list_type"`
+	RecordID string `json:"record_id"`
 }
